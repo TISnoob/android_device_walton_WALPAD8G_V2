@@ -12,7 +12,7 @@ The Walton Walpad 8G (codenamed _"WALPAD8G_V2"_) is an entry-level tablet from W
 
 ## Versions 
 
-The device has 2 varients 
+Get the tree:
 - [MT6761](https://github.com/TISnoob/android_device_walton_WALPAD8G_V2/tree/MT6761)
 - [MT6765](https://github.com/TISnoob/android_device_walton_WALPAD8G_V2/tree/MT6765)
 
