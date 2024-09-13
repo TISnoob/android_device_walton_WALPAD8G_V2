@@ -20,6 +20,18 @@ PRODUCT_PACKAGES += \
     update_engine_sideload \
     update_verifier
 
+AB_OTA_POSTINSTALL_CONFIG += \
+    RUN_POSTINSTALL_system=true \
+    POSTINSTALL_PATH_system=system/bin/otapreopt_script \
+    FILESYSTEM_TYPE_system=ext4 \
+    POSTINSTALL_OPTIONAL_system=true
+
+AB_OTA_POSTINSTALL_CONFIG += \
+    RUN_POSTINSTALL_vendor=true \
+    POSTINSTALL_PATH_vendor=bin/checkpoint_gc \
+    FILESYSTEM_TYPE_vendor=ext4 \
+    POSTINSTALL_OPTIONAL_vendor=true
+
 PRODUCT_PACKAGES += \
     checkpoint_gc \
     otapreopt_script
@@ -50,7 +62,7 @@ PRODUCT_CHARACTERISTICS := tablet
 PRODUCT_PACKAGES += \
 
 PRODUCT_PACKAGES += \
-    fstab.enableswap \
+    fstab.mt6765 \
     factory_init.connectivity.rc \
     factory_init.project.rc \
     factory_init.rc \
@@ -58,8 +70,9 @@ PRODUCT_PACKAGES += \
     init.ago.rc \
     init.connectivity.rc \
     init.modem.rc \
-    init.mt6761.rc \
-    init.mt6761.usb.rc \
+    init.mt6762.rc \
+    init.mt6765.rc \
+    init.mt6765.usb.rc \
     init.project.rc \
     init.sensor_1_0.rc \
     meta_init.connectivity.rc \
@@ -67,10 +80,11 @@ PRODUCT_PACKAGES += \
     meta_init.project.rc \
     meta_init.rc \
     multi_init.rc \
-    init.recovery.mt6761.rc \
+    init.recovery.mt6762.rc \
+    init.recovery.mt6765.rc \
 
 PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/rootdir/etc/fstab.enableswap:$(TARGET_VENDOR_RAMDISK_OUT)/first_stage_ramdisk/fstab.enableswap
+    $(LOCAL_PATH)/rootdir/etc/fstab.mt6765:$(TARGET_VENDOR_RAMDISK_OUT)/first_stage_ramdisk/fstab.mt6765
 
 # Soong namespaces
 PRODUCT_SOONG_NAMESPACES += \
